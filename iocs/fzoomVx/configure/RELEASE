@@ -1,0 +1,14 @@
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+WORK=       /dls_sw/work/R3.14.11/support
+SUPPORT=    /dls_sw/prod/R3.14.11/support
+
+ASYN=           $(SUPPORT)/asyn/4-19
+IPAC=           $(SUPPORT)/ipac/2-8dls4-8
+DLS8515=        $(SUPPORT)/DLS8515/0-7
+UTILITY=        $(SUPPORT)/utility/dls2-12
+FZOOM=          $(WORK)/fzoom
+
+EPICS_BASE=/dls_sw/epics/R3.14.11/base
+
+-include $(TOP)/configure/RELEASE.private

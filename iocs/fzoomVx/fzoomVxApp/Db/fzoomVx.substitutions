@@ -1,0 +1,10 @@
+file $(FZOOM)/db/fzoomStatus.template
+{
+    pattern {P, R, PORT, SCAN}
+    {RJQ35657:, ZOOM, FZOOM0, "10 second"}
+}
+file $(FZOOM)/db/fzoomCommand.template
+{
+    pattern {P, R, PORT}
+    {RJQ35657:, ZOOM, FZOOM0 }
+}

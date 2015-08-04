@@ -1,0 +1,352 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 880
+y 660
+w 416
+h 266
+font "arial-medium-r-14.0"
+ctlFont "arial-bold-r-14.0"
+btnFont "arial-bold-r-14.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 0
+ctlBgColor1 index 3
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 11
+title "FZOOM - $(fzoom)"
+showGrid
+snapToGrid
+disableScroll
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 5
+w 413
+h 25
+lineColor index 48
+fill
+fillColor index 48
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 0
+y 5
+w 372
+h 25
+font "arial-bold-r-18.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 61
+useDisplayBg
+value {
+  "$(fzoom)"
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 310
+y 230
+w 95
+h 25
+fgColor index 46
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "EXIT"
+font "arial-medium-r-18.0"
+3d
+endObjectProperties
+
+# (Menu Mux PV)
+object menuMuxPVClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 2010
+y 2160
+w 20
+h 20
+fgColour index 0
+bgColour index 0
+topShadowColour index 0
+botShadowColour index 0
+font "arial-medium-r-14.0"
+numItems 1
+symbolTag {
+  0 "."
+}
+symbol0 {
+  0 "label1"
+}
+PV0 {
+  0 "$(dom)-DI-DCAM-01:ZOOM.DESC"
+}
+symbol1 {
+  0 "label2"
+}
+PV1 {
+  0 "$(dom)-DI-DCAM-01:FILT.DESC"
+}
+endObjectProperties
+
+# (Slider)
+object activeSliderClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 40
+w 390
+h 75
+fgColor index 14
+bgColor index 3
+2ndBgColor index 5
+controlColor index 25
+indicatorColor index 19
+indicatorAlarm 1
+font "arial-medium-r-10.0"
+controlPv "$(fzoom):ZOOMPOSCMD"
+indicatorPv "$(fzoom):ZOOMPOSRBV"
+controlLabel "Desired Value"
+controlLabelType "pvLabel"
+readLabel "Readback Value"
+readLabelType "pvLabel"
+incMultiplier 1
+limitsFromDb
+displayFormat "FFloat"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 260
+y 120
+w 146
+h 28
+controlPv "$(fzoom):ZOOMPOSRBV"
+fgColor index 16
+fgAlarm
+bgColor index 12
+fill
+font "arial-bold-r-16.0"
+lineWidth 2
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 110
+y 120
+w 148
+h 40
+controlPv "$(fzoom):ZOOMPOSCMD"
+fgColor index 25
+fgAlarm
+bgColor index 3
+fill
+font "arial-bold-r-16.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 20
+y 130
+w 58
+h 19
+font "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Position"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 80
+y 170
+w 140
+h 20
+font "arial-medium-r-16.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Ready to acquire"
+}
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 230
+y 170
+w 20
+h 20
+controlPv "$(fzoom):ACQUIRE"
+lineColor index 14
+onColor index 15
+offColor index 19
+lineWidth 2
+numBits 1
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 10
+y 200
+w 160
+h 30
+fgColor index 44
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-medium-r-16.0"
+buttonLabel "Status detail"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "fzoom-status.edl"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "fzoom=$(fzoom)"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 4
+y 4
+w 42
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 0
+botShadowColor index 0
+font "arial-medium-r-14.0"
+invisible
+buttonLabel "Shell Command"
+numCmds 1
+command {
+  0 "firefox $(autogen)/documentation/$(dom)-DI-DCAM-01-help.html"
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 48
+h 29
+lineColor index 1
+fillColor index 0
+lineWidth 2
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 2
+y 2
+w 48
+h 29
+lineColor index 11
+fillColor index 0
+lineWidth 2
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 2
+y 2
+w 47
+h 27
+lineColor index 49
+fill
+fillColor index 48
+lineWidth 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 12
+y 6
+w 4
+h 3
+lineColor index 1
+fill
+fillColor index 0
+lineWidth 2
+endObjectProperties
+

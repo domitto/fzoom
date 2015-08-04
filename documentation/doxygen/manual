@@ -1,0 +1,96 @@
+/**
+\mainpage Qioptic Fetura Zoom module
+\author Ronaldo Mercado
+\date September 2010
+
+\section intro_sec Introduction
+
+EPICS support module for the Qioptic Fetura Advanced Zoom Imaging System
+
+The zoom module is an optical unit to be used at the sample position in the MX beamlines
+at Diamond.
+The zoom module control is via an RS-232 link.
+When operating, the EPICS module regularly request the unit's status.
+When a new position demand arrives, a 'zoom position' transmit instruction 
+is sent and the status is read back.
+Much of the structure of the module was derived from the modbus support module
+by Mark Rivers.
+
+
+This module aims at reproducing the functionality of the manufacturer's "Pulse" software
+delivered with the unit.
+
+\section epics_user_guide How to use the EPICS software
+\subsection example_iocs Example IOCs
+
+There are two example IOCs in the support module, that demonstrate how to build an IOC with the fzoom module.
+
+\li The example 'fzoomExample' was prepared for a Linux PC.
+\li The example ioc 'fzoomVx' was prepared for a vxWorks VME crate using a Hytec serial line.
+
+There is also a script 'fzoomExampleGui' that will launch a GUI for either example IOC.
+
+\subsection interface Interface PVs
+To move the unit, assign a value to the following PV (from 0 to 100%):<br>
+  \$(P)\$(R):ZOOMPOSCMD
+
+There is a status value that can be read about when the unit reports being ready to acquire in PV<br>
+   \$(P)\$(R):ACQUIRE
+
+\subsection initialisation Initialisation
+
+There are two templates to include for the IOC: fzoomCommand.template  and fzoomStatus.template
+
+The initialization in the startup script uses the function call
+
+drvFzoomAsynConfigure(<portname>,<octetPort>)
+
+where 
+\li portname is the new asyn port for the zoom module - to be used in the IOC templates, and
+\li octetPort is the underlying serial line configured separately at initialisation.
+
+\section known_problems Known Problems
+
+\li At initialisation the device cannot determine its current position.
+
+\li Documentation not up to date. See \ref documentation.
+
+\section documentation Manufacturer documentation 
+Here is a sharepoint link to the user guide for the zoom module unit:
+
+<a href="http://diamdocs/sites/default/TECHNICAL%20DIVISION%20(TEC)/Controls%20and%20Interlocks%20CTRL/Supplier%20Documentation/Qioptic/FeturaDevManual-2.1.pdf">Zoom module Developer Guide V2.1</a>
+<br>
+<a href="http://diamdocs/sites/default/TECHNICAL%20DIVISION%20(TEC)/Controls%20and%20Interlocks%20CTRL/Supplier%20Documentation/Qioptic/FeturaDevManual-1.9.pdf">Zoom module Developer Guide V1.9</a>
+
+
+The documentation provided by the manufacturer does not reflect
+what the Windows software "Pulse" uses to communicate.
+The communications were inspected using a signal analyser and 
+it was noticed that undocumented commands are sent to the device
+from "Pulse".
+
+These kind of plausible commands were observed 
+(plausible because the checksum corresponds to what
+is expected):
+
+['08', '0F', 'F0', 'B0', '04', '0F', 'F1', '03', '2B', 'E9']<br>
+['08', '0F', 'F0', '90', '04', '03', '2B', '03', 'C2', '8E']<br>
+['08', '0F', 'F0', '90', '24', '03', '2B', '02', '73', '5E']<br>
+['08', '0F', 'F0', '90', '24', '03', '2B', '02', '9A', '85']<br>
+
+The most frequent command is the status request instruction<br>
+['08', '0F', 'F0', 'B0', '04', '0F', 'F1', '03', 'C4', '82'],<br>
+which is documented. 
+
+The interpretation of the reply, the status message, 
+according to the developer's guide 
+is in doubt, because the checksum returned by the unit seems to be always wrong.
+Warnings are printed for this failed checksum when using a trace mask of 0x10 (ASYN_TRACE_FLOW)
+the zoom module port.
+
+\section todo_tasks To-Do Tasks
+
+\li Find a terminal server configuration to connect to the device via a terminal server
+
+**/
+

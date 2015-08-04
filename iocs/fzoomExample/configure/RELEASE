@@ -1,0 +1,12 @@
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+WORK=       /Users/diego/epics/iocs/fzoom-2-2-1
+SUPPORT=    /Users/diego/epics/synApps_5_7/support
+
+ASYN=           $(SUPPORT)/asyn-4-21
+FZOOM=          $(WORK)
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE=/Users/diego/epics/base
+
+-include $(TOP)/configure/RELEASE.private

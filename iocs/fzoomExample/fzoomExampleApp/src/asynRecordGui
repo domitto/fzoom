@@ -1,0 +1,4 @@
+
+cd /dls_sw/prod/R3.14.8.2/support/asyn/4-10/medm
+medm -x -macro "P=RJQ35657-TEST-01:,R=ASYN" asynRecord.adl
+

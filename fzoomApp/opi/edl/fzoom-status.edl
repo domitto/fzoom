@@ -1,0 +1,237 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 894
+y 121
+w 433
+h 273
+font "arial-medium-r-16.0"
+ctlFont "arial-bold-r-16.0"
+btnFont "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 18
+ctlBgColor1 index 3
+ctlBgColor2 index 5
+topShadowColor index 1
+botShadowColor index 11
+title "Fzoom Status - $(fzoom)"
+showGrid
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 433
+h 52
+lineColor index 6
+fill
+fillColor index 6
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y -2
+w 433
+h 54
+font "arial-bold-r-18.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(fzoom)"
+  "Status/Readback Fields"
+}
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 263
+y 230
+w 165
+h 28
+fgColor index 46
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "arial-medium-r-16.0"
+3d
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 246
+y 80
+w 179
+h 25
+controlPv "$(fzoom):ACQUIRE"
+fgColor index 16
+fgAlarm
+bgColor index 12
+fill
+font "arial-bold-r-16.0"
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 16
+y 85
+w 196
+h 17
+font "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "In focus/ready to acquire:"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 249
+y 118
+w 179
+h 25
+controlPv "$(fzoom):EXCEPTION"
+fgColor index 16
+fgAlarm
+bgColor index 12
+fill
+font "arial-bold-r-16.0"
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 19
+y 123
+w 79
+h 17
+font "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Exception:"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 246
+y 157
+w 179
+h 25
+controlPv "$(fzoom):THRESHOLD"
+fgColor index 16
+fgAlarm
+bgColor index 12
+fill
+font "arial-bold-r-16.0"
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 16
+y 162
+w 213
+h 17
+font "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Current pos error threshold:"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 245
+y 197
+w 179
+h 25
+controlPv "$(fzoom):TIMEOUTDLY"
+fgColor index 16
+fgAlarm
+bgColor index 12
+fill
+font "arial-bold-r-16.0"
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 15
+y 202
+w 168
+h 17
+font "arial-medium-r-16.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Current timeout delay:"
+}
+autoSize
+endObjectProperties
+

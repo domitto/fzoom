@@ -1,0 +1,6 @@
+FZOOM=/home/rjq35657/epics/support/fzoom
+export EDMDATAFILES=${EDMDATAFILES}:${FZOOM}/data/
+export PATH=${PATH}:EDMDATAFILES
+
+edm -x -eolc -m "fzoom=RJQ35657:ZOOM" fzoom.edl
+
