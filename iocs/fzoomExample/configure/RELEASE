@@ -21,15 +21,15 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-FZOOM=/Users/diego/epics/apps/fzoom
+FZOOM=/epics/iocs/fzoom
 
-ASYN=/Users/diego/epics/modules/asyn
+ASYN=/usr/lib/epics
 
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/Users/diego/epics/base
+EPICS_BASE=/usr/lib/epics
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
