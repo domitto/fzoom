@@ -10,10 +10,10 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-WORK=       /Users/diego/epics/iocs/fzoom-2-2-1
+WORK=       /Users/diego/epics/apps/fzoom
 SUPPORT=    /Users/diego/epics/synApps_5_7/support
 
-ASYN=           $(SUPPORT)/asyn-4-21
+ASYN=/Users/diego/epics/modules/asyn
 # If you don't want to install into $(TOP) then
 # define INSTALL_LOCATION_APP here
 #INSTALL_LOCATION_APP=<fullpathname>

@@ -19,7 +19,8 @@ fzoomExample_registerRecordDeviceDriver(pdbbase)
 
 # portName, hostInfo, priority, noAutoConnect, noProcessEos
 #drvAsynIPPortConfigure("P0", "172.23.241.5:7025", 0,0,1)
-drvAsynSerialPortConfigure("P0", "/dev/ttyUSB0", 0,0,1)
+#drvAsynSerialPortConfigure("P0", "/dev/ttyUSB0", 0,0,1)
+drvAsynSerialPortConfigure("P0", "/dev/tty.usbserial", 0,0,1)
 asynSetOption("P0", 0, "baud",    "9600")
 asynSetOption("P0", 0, "bits",    "8")
 asynSetOption("P0", 0, "parity",  "none")
@@ -37,9 +38,9 @@ dbLoadRecords("db/asynRecord.db","P=RJQ35657-TEST-01:,R=ASYN,PORT=P0,ADDR=0,OMAX
 
 iocInit()
 
-asynSetTraceMask("FZOOM0", 0, 0xFF)
-asynSetTraceIOMask("FZOOM0", 0, 0xFF)
-asynSetTraceMask("P0", 0, 0xFF)
-asynSetTraceIOMask("P0", 0, 0xFF)
+#asynSetTraceMask("FZOOM0", 0, 0xFF)
+#asynSetTraceIOMask("FZOOM0", 0, 0xFF)
+#asynSetTraceMask("P0", 0, 0xFF)
+#asynSetTraceIOMask("P0", 0, 0xFF)
 ## Start any sequence programs
 #seq sncExample,"user=xxx"
