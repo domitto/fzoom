@@ -21,7 +21,7 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-FZOOM=/epics/iocs/fzoom
+FZOOM=/epics/src/fzoomSupport
 
 ASYN=/usr/lib/epics
 

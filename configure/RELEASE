@@ -10,7 +10,7 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-WORK=       /epics/iocs/fzoom
+WORK=       /epics/src/fzoomSupport
 SUPPORT=    /usr/lib/epics
 
 ASYN=$(SUPPORT)

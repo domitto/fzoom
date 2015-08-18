@@ -1,4 +1,4 @@
-FZOOM=/epics/iocs/fzoom
+FZOOM=/epics/src/fzoomSupport
 export EDMDATAFILES=${EDMDATAFILES}:${FZOOM}/fzoomApp/opi/edl
 export PATH=${PATH}:EDMDATAFILES
 

@@ -13,6 +13,10 @@ cd "../.."
 # specific file.
 #$(VXWORKS_ONLY)ld < bin/$(ARCH)/fzoomExample.munch
 
+
+epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST", "NO")
+epicsEnvSet("EPICS_CA_ADDR_LIST", "10.16.0.255")
+
 ## Register all support components
 dbLoadDatabase("dbd/fzoomExample.dbd")
 fzoomExample_registerRecordDeviceDriver(pdbbase)
